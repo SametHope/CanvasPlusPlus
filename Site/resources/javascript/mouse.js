@@ -48,7 +48,7 @@ class Mouse {
     this.current.changedCell = this.current.relPosition.x !== this.last.relPosition.x || this.current.relPosition.y !== this.last.relPosition.y;
 
     if (this.current.state === this.last.state && !this.current.changedCell) {
-      // If neither the state or cells have changed there hasn't been a noticeable change to trigger the event.
+      // If neither the state or cells have changed there haven't been a noticeable change to trigger the event.
       // Notice that we don't really care for the absPosition
       return;
     }

@@ -1,17 +1,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canvas++</title>
-  <link rel="stylesheet" href="Style.css">
-  <link rel="stylesheet" href="numbers.css">
-  <script defer src="utility.js"></script>
-  <script defer src="mouse.js"></script>
-  <script defer src="props.js"></script>
-  <script defer src="options.js"></script>
-  <script defer src="history.js"></script>
-  <script defer src="grid.js"></script>
-  <script defer src="save.js"></script>
-  <script defer src="script.js"></script>
+  <title>CanvasPlusPlus</title>
+  <link rel="icon" type="image/png" href="resources/images/icon.png" />
+  <link rel="stylesheet" href="resources/css/Style.css">
+  <link rel="stylesheet" href="resources/css/NumberOptionInputs.css">
+  <script defer src="resources/javascript/utility.js"></script>
+  <script defer src="resources/javascript/mouse.js"></script>
+  <script defer src="resources/javascript/props.js"></script>
+  <script defer src="resources/javascript/options.js"></script>
+  <script defer src="resources/javascript/history.js"></script>
+  <script defer src="resources/javascript/grid.js"></script>
+  <script defer src="resources/javascript/save.js"></script>
+  <script defer src="resources/javascript/main.js"></script>
 </head>
 
 <body ondragstart="return false;" ondrop="return false;" oncontextmenu="return false" style="user-select: none;">
@@ -32,19 +33,10 @@
     </div>
   </main>
 
-
   <div id="options" class="options">
     <div class="options-menu">
       <table>
         <tbody>
-          <tr style="display: none;">
-            <td>Grid Width</td>
-            <td><input type="number" id="width-input" inputmode="numeric"></td>
-          </tr>
-          <tr style="display: none;">
-            <td>Grid Height</td>
-            <td><input type="number" id="height-input" inputmode="numeric"></td>
-          </tr>
           <tr>
             <td><span>Brush Color</span></td>
             <td><input type="color" id="color-input" value="#000000"></td>

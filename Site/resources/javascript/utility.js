@@ -10,10 +10,6 @@ function log(...data) {
   console.log(...data);
 }
 
-let mouseX;
-let mouseY;
-onmousemove = function (e) { mouseX = e.clientX; mouseY = e.clientY; }
-
 function isPointInsideRect(rect, point) {
   return (
     point.x >= rect.left &&

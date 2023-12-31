@@ -1,0 +1,89 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas++</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="numbers.css">
+  <script defer src="utility.js"></script>
+  <script defer src="mouse.js"></script>
+  <script defer src="props.js"></script>
+  <script defer src="options.js"></script>
+  <script defer src="history.js"></script>
+  <script defer src="grid.js"></script>
+  <script defer src="save.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body ondragstart="return false;" ondrop="return false;" oncontextmenu="return false" style="user-select: none;">
+
+  <main>
+    <h1>Canvas ++</h1>
+    <div id="grid-container"></div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <div>
+        <p>Press <strong>Escape</strong> to toggle the options menu</p>
+        <p>Press <strong>Z</strong> to go back</p>
+        <p>Press <strong>X</strong> to go back harder</p>
+      </div>
+      <div>
+        <p style="text-align: end;">Use <strong>Left Click</strong> to draw</p>
+        <p style="text-align: end;">Use <strong>Right Click</strong> to erase</p>
+      </div>
+    </div>
+  </main>
+
+
+  <div id="options" class="options">
+    <div class="options-menu">
+      <table>
+        <tbody>
+          <tr style="display: none;">
+            <td>Grid Width</td>
+            <td><input type="number" id="width-input" inputmode="numeric"></td>
+          </tr>
+          <tr style="display: none;">
+            <td>Grid Height</td>
+            <td><input type="number" id="height-input" inputmode="numeric"></td>
+          </tr>
+          <tr>
+            <td><span>Brush Color</span></td>
+            <td><input type="color" id="color-input" value="#000000"></td>
+          </tr>
+          <tr>
+            <td><span>Brush Size</span></td>
+            <td>
+              <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                <input id="brush-size-input" min="1" placeholder="0" value="3" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span>Cell Border Size</span></td>
+            <td>
+              <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                <input id="cell-border-size" min="0" placeholder="0" value="0" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span>Cell Border Color</span></td>
+            <td><input type="color" id="cell-border-color" value="#000000"></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" id="load-button" value="Load from disk"
+                onclick="activeSaveLoadMaster.loadFromDisk()">
+            </td>
+            <td>
+              <input type="button" id="save-button" value="Save to disk" onclick="activeSaveLoadMaster.saveToDisk()">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

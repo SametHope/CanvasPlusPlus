@@ -1,0 +1,118 @@
+/* Technically these are set/created dynamically with code so no need to set them here
+However, for the text editors auto-completes sake, they are left here  */
+:root {
+  --grid-width: 5;
+  --grid-height: 3;
+
+  --cell-size: 50;
+  --cell-background-color: rgb(235, 3, 3);
+
+  --cell-border-size: 1;
+  --cell-border-color: #AFF;
+
+  --cell-border-highlight-color: #AFF;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  background: rgb(40, 26, 26);
+  background: radial-gradient(circle, rgba(40, 26, 26, 1) 38%, rgb(2, 0, 36) 100%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-width), calc(var(--cell-size) * 1px));
+  grid-template-rows: repeat(var(--grid-height), calc(var(--cell-size) * 1px));
+  gap: 0;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 15px;
+  /* Adding border causes inaccuracies for cell x y detection (or not, not sure, do NOT modify for now as they are kind of handled)*/
+  border: 2px solid white;
+  filter: drop-shadow(1px 1px 20px #ffffff);
+}
+
+.grid-cell {
+  height: calc(var(--cell-size) * 1 px);
+  width: calc(var(--cell-size) * 1 px);
+  outline: calc(var(--cell-border-size) * 1px) solid var(--cell-border-color);
+  background-color: var(--cell-background-color);
+}
+
+/* .grid-cell:hover {
+  border: 0.2px solid black;
+} */
+
+.options {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.options-menu {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(40, 26, 26, 1);
+  color: white;
+  padding: 15px;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+  padding-bottom: 3px;
+}
+
+strong {
+  color: rgb(234, 251, 51);
+}
+
+span {
+  padding-right: 20px;
+}
+
+/* Hide default number input increase/decrease buttons */
+@layer base {
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+input {
+  width: 100%;
+  height: 35px;
+}
+
+input[type='button'] {
+  margin-top: 5px;
+  background: rgb(40, 26, 26);
+  color: white;
+}
+
+input[type='button']:hover {
+  background: rgb(81, 54, 54);
+}
